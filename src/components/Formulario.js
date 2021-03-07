@@ -1,9 +1,22 @@
 import React from "react";
 import styled from "styled-components";
 
+import useMoneda from "../hooks/useMoneda";
+
 const Formulario = () => {
+  // Utilizar useMoneda
+
+  const MONEDAS = [
+    { codigo: "COP", nombre: "Peso Colombiano" },
+    { codigo: "EUR", nombre: "Euro" },
+    { codigo: "MXN", nombre: "Peso Mexicano" },
+    { codigo: "USD", nombre: "Dolar de Estados Unidos" },
+  ];
+  const [moneda, SelectMonedas] = useMoneda("Elige tu Moneda", "", MONEDAS);
+
   return (
-    <form action="">
+    <form>
+      <SelectMonedas />
       <Boton type="submit" value="Calcular" />
     </form>
   );
