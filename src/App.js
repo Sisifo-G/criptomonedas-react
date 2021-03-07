@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Formulario from "./components/Formulario";
 import imagen from "./cryptomonedas.png";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       </div>
       <div>
         <Heading>Cotiza Criptomonedas al Instante</Heading>
+        <Formulario />
       </div>
     </Contenedor>
   );
