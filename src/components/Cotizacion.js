@@ -5,24 +5,45 @@ const Cotizacion = ({ resultado }) => {
   if (Object.keys(resultado).length === 0) return null;
 
   return (
-    <div>
-      <p>
+    <ResultadoDiv>
+      <Precio>
         El precio actual es: <span>{resultado.PRICE}</span>
-      </p>
-      <p>
+      </Precio>
+      <Info>
         Precio más alto del día: <span>{resultado.HIGHDAY}</span>
-      </p>
-      <p>
+      </Info>
+      <Info>
         El precio más bajo del día: <span>{resultado.LOWDAY}</span>
-      </p>
-      <p>
+      </Info>
+      <Info>
         Variación últimas 24 horas: <span>{resultado.CHANGEPCT24HOUR}</span>
-      </p>
-      <p>
+      </Info>
+      <Info>
         Última actualización: <span>{resultado.LASTUPDATE}</span>
-      </p>
-    </div>
+      </Info>
+    </ResultadoDiv>
   );
 };
 
 export default Cotizacion;
+
+const ResultadoDiv = styled.div`
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+`;
+
+const Info = styled.p`
+  font-size: 18px;
+
+  span {
+    font-weight: bold;
+  }
+`;
+
+const Precio = styled.p`
+  font-size: 30px;
+  span {
+    font-weight: bold;
+  }
+`;
