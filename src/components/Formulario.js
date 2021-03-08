@@ -56,7 +56,7 @@ const Formulario = () => {
 
   return (
     <form onSubmit={cotizarMoneda}>
-      {error ? "Hay un error" : null}
+      {error ? "Hay un error, los campos no pueden estar vacíos" : null}
       <SelectMonedas />
       <SelectCripto />
       <Boton type="submit" value="Calcular" />
