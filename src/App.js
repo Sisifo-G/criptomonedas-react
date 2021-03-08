@@ -63,7 +63,7 @@ function App() {
 export default App;
 
 const Contenedor = styled.div`
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   @media (min-width: 992px) {
     display: grid;
