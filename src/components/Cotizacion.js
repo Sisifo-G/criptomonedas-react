@@ -7,13 +7,13 @@ const Cotizacion = ({ resultado }) => {
   return (
     <ResultadoDiv>
       <Precio>
-        El precio actual es: <span>$ {resultado.PRICE}</span>
+        Precio actual: <span>{resultado.PRICE}</span>
       </Precio>
       <Info>
         Precio más alto del día: <span>{resultado.HIGHDAY}</span>
       </Info>
       <Info>
-        El precio más bajo del día: <span>{resultado.LOWDAY}</span>
+        Precio más bajo del día: <span>{resultado.LOWDAY}</span>
       </Info>
       <Info>
         Variación últimas 24 horas: <span>{resultado.CHANGEPCT24HOUR}</span>
