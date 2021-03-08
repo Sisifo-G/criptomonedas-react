@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import useMoneda from "../hooks/useMoneda";
 import useCriptomoneda from "../hooks/useCriptomoneda";
+import axios from "axios";
 
 const Formulario = () => {
   // Utilizar useMoneda
+
+  // State del listado de criptomonedas
+  const [listacripto, guardarCriptommonedas] = useState([]);
 
   const MONEDAS = [
     { codigo: "COP", nombre: "Peso Colombiano" },
@@ -18,8 +22,22 @@ const Formulario = () => {
   // Utilizar useCriptomoneda
   const [criptomoneda, SelectCripto] = useCriptomoneda(
     "Elige tu Criptomoneda",
-    ""
+    "",
+    listacripto
   );
+
+  // Ejecutar llamado a la API
+  useEffect(() => {
+    const consultarAPI = async () => {
+      const url =
+        "https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD";
+
+      const resultado = await axios.get(url);
+
+      guardarCriptommonedas(resultado.data.Data);
+    };
+    consultarAPI();
+  }, []);
 
   return (
     <form>
