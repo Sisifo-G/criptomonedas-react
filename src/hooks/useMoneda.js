@@ -6,7 +6,7 @@ const useMoneda = (label, stateInicial, opciones) => {
   const [state, actualizarState] = useState(stateInicial);
 
   const Seleccionar = () => (
-    <Fragment>
+    <>
       <Label>{label}</Label>
       <Select onChange={(e) => actualizarState(e.target.value)} value={state}>
         <option value=""> -- Seleccione -- </option>
@@ -16,7 +16,7 @@ const useMoneda = (label, stateInicial, opciones) => {
           </option>
         ))}
       </Select>
-    </Fragment>
+    </>
   );
   return [state, Seleccionar, actualizarState];
 };
