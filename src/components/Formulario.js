@@ -4,6 +4,7 @@ import styled from "styled-components";
 import useMoneda from "../hooks/useMoneda";
 import useCriptomoneda from "../hooks/useCriptomoneda";
 import axios from "axios";
+import Error from "./Error";
 
 const Formulario = () => {
   // Utilizar useMoneda
@@ -56,7 +57,7 @@ const Formulario = () => {
 
   return (
     <form onSubmit={cotizarMoneda}>
-      {error ? "Hay un error, los campos no pueden estar vacíos..." : null}
+      {error ? <Error mensaje="Todos los campos son obligatorios" /> : null}
       <SelectMonedas />
       <SelectCripto />
       <Boton type="submit" value="Calcular" />
